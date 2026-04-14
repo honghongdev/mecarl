@@ -36,9 +36,11 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
 
-          <h1 class="title is-1 publication-title">
-            MeCaRL: Memory-enhanced Collision-aware Reinforcement Learning for UAV Navigation in Multi-scale Obstacle Environments
-          </h1>
+          <h1 class="title is-1 publication-title">MeCaRL</h1>
+          <h2 class="title is-4 publication-title" style="font-weight: normal; margin-top: -0.75rem;">
+            Memory-enhanced Collision-aware Reinforcement Learning<br>
+            for UAV Navigation in Multi-scale Obstacle Environments
+          </h2>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block">
@@ -110,28 +112,22 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified abstract-content">
+        <div class="content has-text-justified">
           <p>
             Unmanned aerial vehicle (UAV) navigation in unknown and cluttered environments
             remains an important research topic. Existing learning-based methods typically
             evaluate performance by varying obstacle number and density, while paying less
-            attention to the perception and decision-making difficulties introduced by
-            obstacle scale variations.
-          </p>
-          <p>
-            In this work, we propose MeCaRL, a memory-enhanced
-            and collision-aware reinforcement learning framework for UAV visual navigation.
-            MeCaRL learns a collision-aware latent representation from depth observations
-            to improve sensitivity to small obstacles, and incorporates temporal memory
-            to fuse historical observations and mitigate occlusions caused by large
-            obstacles.
-          </p>
-          <p>
-            We evaluate MeCaRL in multi-scale obstacle environments, including
-            ultra-small and extra-large obstacle settings. Results show that MeCaRL
-            consistently outperforms strong learning-based baselines in success rate.
-            Real-world outdoor flight experiments further demonstrate the feasibility
-            of deploying MeCaRL for safe and efficient
+            attention to the perception and decision-making difficulties introduced by obstacle scale variations.
+            In this work, we propose MeCaRL, a memory-enhanced and collision-aware reinforcement
+            learning framework for UAV visual navigation. MeCaRL learns a collision-aware latent
+            representation from depth observations to improve sensitivity to small obstacles,
+            and incorporates temporal memory to fuse historical observations and mitigate occlusions
+            caused by large obstacles. We evaluate MeCaRL in multi-scale obstacle environments,
+            including ultra-small and extra-large obstacle settings. Results show that MeCaRL
+            consistently outperforms strong learning-based baselines in success rate. The gains
+            are particularly clear in ultra-small and extra-large scenarios, while performance
+            remains strong in nominal-scale environments. Real-world outdoor flight experiments
+            further demonstrate the feasibility of deploying MeCaRL for safe and efficient
             navigation in cluttered environments.
           </p>
         </div>
@@ -147,16 +143,24 @@
     <div class="columns is-centered has-text-centered">
       <div class="column">
         <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <p>
+            MeCaRL combines two complementary representation modules.
+            A VAE is trained to reconstruct collision-aware depth images, where obstacle boundaries
+            are inflated by the UAV body size, embedding safety-relevant geometry into the latent
+            space without runtime preprocessing.
+            An LSTM then aggregates latent sequences and is supervised by jointly reconstructing
+            both the current and a temporally offset collision-aware observation,
+            encouraging the hidden state to maintain scene context under occlusion.
+            The navigation policy is subsequently trained via RL with the representation
+            modules frozen.
+          </p>
+        </div>
         <img src="./static/images/fig2_architecture.png"
              alt="MeCaRL architecture"
              style="max-width: 100%; height: auto;">
         <h2 class="subtitle has-text-centered figure-caption">
-          Overview of the MeCaRL architecture. A depth image is encoded by a VAE into a
-          latent vector, fused with temporal history via an LSTM to produce a
-          memory-enhanced representation, and concatenated with UAV state and target
-          information for policy prediction. The dashed box denotes the training-only
-          branch, where collision-aware reconstruction supervises representation
-          learning.
+          Overview of the MeCaRL architecture and training pipeline.
         </h2>
       </div>
     </div>
@@ -172,10 +176,10 @@
         <h2 class="title is-3">Multi-scale Obstacle Avoidance in Simulation</h2>
         <div class="content has-text-justified">
           <p>
-            The policy is trained in a nominal-scale environment and directly evaluated
-            across six obstacle scales, without retraining. MeCaRL maintains safe and
-            coherent flight across <b>ultra-small</b>, <b>small</b>, <b>medium</b>,
-            <b>large</b>, <b>extra-large</b>, and <b>mixed-scale</b> configurations.
+            The policy is trained in a nominal-scale environment and evaluated zero-shot
+            across six obstacle scales ranging from ultra-small (1–5 cm) to extra-large (400–500 cm).
+            MeCaRL achieves consistently high success rates across all configurations,
+            demonstrating robust generalization to obstacle scale variation without retraining.
           </p>
         </div>
 
@@ -227,13 +231,11 @@
 
         <div class="content has-text-justified">
           <p>
-            We deploy MeCaRL on a 250&nbsp;mm-wheelbase
-            quadrotor equipped with an Intel RealSense D435 depth camera, an NVIDIA
-            Jetson Orin NX onboard computer, and a Pixhawk 6C mini flight controller.
-            Only the VAE and LSTM representation modules are fine-tuned on real depth
-            data; the policy network is kept as trained in simulation. Outdoor flights
-            are conducted in a tree-rich environment to demonstrate the feasibility
-            of onboard deployment.
+            MeCaRL is deployed on a 250&nbsp;mm quadrotor with an Intel RealSense D435,
+            NVIDIA Jetson Orin NX, and Pixhawk 6C mini.
+            The representation modules are fine-tuned on real-world depth data,
+            while the policy transfers directly from simulation.
+            Outdoor flight experiments confirm the feasibility of fully onboard deployment.
           </p>
         </div>
 
