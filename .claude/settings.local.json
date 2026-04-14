@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:rpg.ifi.uzh.ch)",
+      "Bash(curl -s \"https://rpg.ifi.uzh.ch/env_as_policy/\" -o /tmp/env_as_policy.html)",
+      "Read(//tmp/**)",
+      "Bash(cp \"figures/fig1_motivation_01.png\" \"static/images/fig1_motivation.png\")",
+      "Bash(cp \"figures/fig2_architecture_01.png\" \"static/images/fig2_architecture.png\")",
+      "Bash(cp \"figures/fig_ca_preprocess_01.png\" \"static/images/fig_ca_preprocess.png\")",
+      "Bash(cp \"figures/fig_sim_env_01.png\" \"static/images/fig_sim_env.png\")",
+      "Bash(cp \"figures/fig_trajectory_01.png\" \"static/images/fig_trajectory.png\")",
+      "Bash(python3 -c \"from PIL import Image; img = Image.open\\('c:/百度网盘同步文件夹/BaiduSyncdisk/1-论文研究/1-MeCaRL/github展示网站/mecarl/static/images/uavnav-v3.png'\\); print\\(img.size, img.mode\\)\")",
+      "Bash(powershell -command 'Add-Type -AssemblyName System.Drawing; $img = [System.Drawing.Image]::FromFile\\('\\\\''c:\\\\百度网盘同步文件夹\\\\BaiduSyncdisk\\\\1-论文研究\\\\1-MeCaRL\\\\github展示网站\\\\mecarl\\\\static\\\\images\\\\uavnav-v3.png'\\\\''\\); Write-Host $img.Width $img.Height; $img.Dispose\\(\\)')",
+      "Bash(powershell -command ':*)"
+    ]
+  }
+}

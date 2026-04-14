@@ -4,18 +4,9 @@
   <meta charset="utf-8">
   <meta name="description"
         content="MeCaRL: Memory-enhanced Collision-aware Reinforcement Learning for UAV Navigation in Multi-scale Obstacle Environments">
-  <meta name="keywords" content="MeCaRL, UAV Navigation, Reinforcement Learning, Collision Avoidance">
+  <meta name="keywords" content="MeCaRL, UAV Navigation, Reinforcement Learning, Collision Avoidance, Multi-scale Obstacles, Quadrotor">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MeCaRL: Memory-enhanced Collision-aware Reinforcement Learning for UAV Navigation</title>
-
-  <!-- 提示：如果你不需要 Google Analytics 统计，可以删除下面这段 script -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-PYVRSFMDRL');
-  </script> -->
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -27,7 +18,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="icon" type="image/png" href="./static/images/favicon.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -37,30 +28,8 @@
 </head>
 <body>
 
-<!-- 导航栏：这里暂时简化，去掉了 Nerfies 的 "More Research" 下拉菜单 -->
-<!-- 如果你有个人主页，可以把 href 改成你的主页链接 -->
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <!-- TODO: 如果你有个人主页，把 # 替换成你的主页 URL -->
-      <a class="navbar-item" href="#">
-        <span class="icon">
-          <i class="fas fa-home"></i>
-        </span>
-      </a>
-    </div>
-  </div>
-</nav>
 
-
-<!-- 论文标题、作者、机构、链接按钮 -->
+<!-- Hero: 标题 / 作者 / 链接 -->
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
@@ -72,71 +41,60 @@
           </h1>
 
           <div class="is-size-5 publication-authors">
-            <!-- TODO: 如果作者有个人主页，把 # 替换成对应链接 -->
             <span class="author-block">
-              <a href="#">Hong Hong</a><sup>1</sup>,
+              <a href="#">Hong Hong</a><sup>*</sup>,
             </span>
             <span class="author-block">
-              <a href="#">Feiyu Liao</a><sup>1</sup>,
+              <a href="#">Feiyu Liao</a><sup>*</sup>,
             </span>
             <span class="author-block">
-              <a href="#">Haitao Wang</a><sup>1</sup>,
+              <a href="#">Haitao Wang</a><sup>&dagger;</sup>,
             </span>
             <span class="author-block">
-              <a href="#">Hejun Wu</a><sup>1</sup>
+              <a href="#">Hejun Wu</a>
+            </span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block">
+              <sup>*</sup>equal contribution&nbsp;&nbsp;<sup>&dagger;</sup>corresponding author
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Sun Yat-sen University</span>
+            <span class="author-block">Sun Yat-sen University</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
-
-              <!-- TODO: 挂上 arXiv 后，把两处 # 替换成你的 arXiv 链接 -->
-              <!-- 例如: https://arxiv.org/pdf/2xxx.xxxxx  和  https://arxiv.org/abs/2xxx.xxxxx -->
+              <!-- TODO: 论文 PDF 上线后更新 -->
               <span class="link-block">
-                <a href="#"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fas fa-file-pdf"></i>
-                  </span>
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
                   <span>Paper</span>
                 </a>
               </span>
+              <!-- TODO: arXiv 上线后更新 -->
               <span class="link-block">
-                <a href="#"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
                   <span>arXiv</span>
                 </a>
               </span>
-
-              <!-- TODO: 有演示视频后，把 # 替换成 YouTube 链接 -->
+              <!-- TODO: YouTube 上线后更新 -->
               <span class="link-block">
-                <a href="#"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fab fa-youtube"></i>
-                  </span>
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-youtube"></i></span>
                   <span>Video</span>
                 </a>
               </span>
-
-              <!-- TODO: 有代码仓库后，把 # 替换成 GitHub 链接 -->
+              <!-- TODO: 代码仓库公开后更新 -->
               <span class="link-block">
-                <a href="#"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fab fa-github"></i>
-                  </span>
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
                   <span>Code</span>
                 </a>
               </span>
-
             </div>
           </div>
         </div>
@@ -146,99 +104,113 @@
 </section>
 
 
-<!-- Teaser 区域：用于放一个最能代表论文的视频或图片 -->
-<!-- 如果暂时没有视频，可以把整个 <section class="hero teaser"> 注释掉 -->
-<!-- 有了视频后，把 teaser.mp4 替换成你自己的视频文件名 -->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4" type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">MeCaRL</span> enables safe and efficient UAV navigation
-        in cluttered environments with multi-scale obstacles through
-        memory-enhanced collision-aware reinforcement learning.
-      </h2>
-    </div>
-  </div>
-</section>
-
-
-<!-- Abstract 摘要 -->
-<section class="section">
+<!-- Abstract -->
+<section class="section gray-background">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
+        <div class="content has-text-justified abstract-content">
           <p>
             Unmanned aerial vehicle (UAV) navigation in unknown and cluttered environments
-            remains an important research topic.
-            Existing learning-based methods typically evaluate performance by varying obstacle
-            number and density, while paying less attention to the perception and decision-making
-            difficulties introduced by obstacle scale variations.
+            remains an important research topic. Existing learning-based methods typically
+            evaluate performance by varying obstacle number and density, while paying less
+            attention to the perception and decision-making difficulties introduced by
+            obstacle scale variations.
           </p>
           <p>
-            In this work, we propose <span class="dnerf">MeCaRL</span>, a memory-enhanced and
-            collision-aware reinforcement learning framework for UAV visual navigation.
-            MeCaRL learns a collision-aware latent representation from depth observations to
-            improve sensitivity to small obstacles, and incorporates temporal memory to fuse
-            historical observations and mitigate occlusions caused by large obstacles.
+            In this work, we propose MeCaRL, a memory-enhanced
+            and collision-aware reinforcement learning framework for UAV visual navigation.
+            MeCaRL learns a collision-aware latent representation from depth observations
+            to improve sensitivity to small obstacles, and incorporates temporal memory
+            to fuse historical observations and mitigate occlusions caused by large
+            obstacles.
           </p>
           <p>
-            We evaluate MeCaRL in multi-scale obstacle environments, including ultra-small and
-            extra-large obstacle settings. Results show that MeCaRL consistently outperforms
-            strong learning-based baselines in success rate. The gains are particularly clear in
-            ultra-small and extra-large scenarios, while performance remains strong in
-            nominal-scale environments. Real-world outdoor flight experiments further demonstrate
-            the feasibility of deploying <span class="dnerf">MeCaRL</span> for safe and efficient
+            We evaluate MeCaRL in multi-scale obstacle environments, including
+            ultra-small and extra-large obstacle settings. Results show that MeCaRL
+            consistently outperforms strong learning-based baselines in success rate.
+            Real-world outdoor flight experiments further demonstrate the feasibility
+            of deploying MeCaRL for safe and efficient
             navigation in cluttered environments.
           </p>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- 论文视频嵌入区域 -->
-    <!-- TODO: 有 YouTube 视频后，把 VIDEO_ID 替换成你的视频 ID -->
-    <!-- 视频 ID 是 YouTube 链接中 v= 后面的部分，例如 https://youtu.be/XXXXXX 中的 XXXXXX -->
-    <!--
+
+<!-- Method -->
+<section class="section">
+  <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/VIDEO_ID?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    -->
-
-  </div>
-</section>
-
-
-<!-- 方法介绍区域 -->
-<!-- TODO: 上传方法图到 static/images/ 后，把 method.png 改成你的文件名 -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full-width">
+      <div class="column">
         <h2 class="title is-3">Method</h2>
+        <img src="./static/images/fig2_architecture.png"
+             alt="MeCaRL architecture"
+             style="max-width: 100%; height: auto;">
+        <h2 class="subtitle has-text-centered figure-caption">
+          Overview of the MeCaRL architecture. A depth image is encoded by a VAE into a
+          latent vector, fused with temporal history via an LSTM to produce a
+          memory-enhanced representation, and concatenated with UAV state and target
+          information for policy prediction. The dashed box denotes the training-only
+          branch, where collision-aware reconstruction supervises representation
+          learning.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Multi-scale obstacle avoidance in simulation (video demos) -->
+<section class="section gray-background">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Multi-scale Obstacle Avoidance in Simulation</h2>
         <div class="content has-text-justified">
           <p>
-            MeCaRL consists of two key components: a <strong>collision-aware representation
-            module</strong> that learns discriminative latent features from depth observations
-            to improve sensitivity to obstacles of varying scales, and a
-            <strong>temporal memory module</strong> that aggregates historical observations
-            to handle occlusions caused by large obstacles.
+            The policy is trained in a nominal-scale environment and directly evaluated
+            across six obstacle scales, without retraining. MeCaRL maintains safe and
+            coherent flight across <b>ultra-small</b>, <b>small</b>, <b>medium</b>,
+            <b>large</b>, <b>extra-large</b>, and <b>mixed-scale</b> configurations.
           </p>
         </div>
-        <!-- TODO: 替换成你的方法图文件名 -->
-        <div class="has-text-centered">
-          <img src="./static/images/method.png"
-               alt="MeCaRL Method Overview"
-               style="max-width: 100%;">
+
+        <!-- TODO: 把每个 .video-placeholder 替换为对应的 <video> 元素，例如：
+             <video autoplay muted loop playsinline>
+               <source src="./static/videos/sim_ultrasmall.mp4" type="video/mp4">
+             </video>
+             建议命名：sim_us.mp4 / sim_s.mp4 / sim_m.mp4 / sim_l.mp4 / sim_xl.mp4 / sim_mix.mp4 -->
+        <div class="video-container">
+          <div class="video-item">
+            <div class="video-placeholder">Ultra-small demo<br><small>(sim_us.mp4)</small></div>
+            <h2 class="subtitle has-text-centered figure-caption">Ultra-small (US)</h2>
+          </div>
+          <div class="video-item">
+            <div class="video-placeholder">Small demo<br><small>(sim_s.mp4)</small></div>
+            <h2 class="subtitle has-text-centered figure-caption">Small (S)</h2>
+          </div>
+          <div class="video-item">
+            <div class="video-placeholder">Medium demo<br><small>(sim_m.mp4)</small></div>
+            <h2 class="subtitle has-text-centered figure-caption">Medium (M)</h2>
+          </div>
+        </div>
+        <div class="video-container">
+          <div class="video-item">
+            <div class="video-placeholder">Large demo<br><small>(sim_l.mp4)</small></div>
+            <h2 class="subtitle has-text-centered figure-caption">Large (L)</h2>
+          </div>
+          <div class="video-item">
+            <div class="video-placeholder">Extra-large demo<br><small>(sim_xl.mp4)</small></div>
+            <h2 class="subtitle has-text-centered figure-caption">Extra-large (XL)</h2>
+          </div>
+          <div class="video-item">
+            <div class="video-placeholder">Mixed-scale demo<br><small>(sim_mix.mp4)</small></div>
+            <h2 class="subtitle has-text-centered figure-caption">Mixed-scale (MIX)</h2>
+          </div>
         </div>
       </div>
     </div>
@@ -246,60 +218,56 @@
 </section>
 
 
-<!-- 实验结果区域 -->
-<!-- TODO: 替换成你自己的结果图和视频 -->
+<!-- Real-world deployment -->
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Results</h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Real-world Deployment</h2>
 
-        <h3 class="title is-4">Simulation Experiments</h3>
         <div class="content has-text-justified">
           <p>
-            We evaluate MeCaRL across three obstacle scale settings: ultra-small, nominal-scale,
-            and extra-large. MeCaRL consistently achieves higher success rates than
-            learning-based baselines across all scenarios.
+            We deploy MeCaRL on a 250&nbsp;mm-wheelbase
+            quadrotor equipped with an Intel RealSense D435 depth camera, an NVIDIA
+            Jetson Orin NX onboard computer, and a Pixhawk 6C mini flight controller.
+            Only the VAE and LSTM representation modules are fine-tuned on real depth
+            data; the policy network is kept as trained in simulation. Outdoor flights
+            are conducted in a tree-rich environment to demonstrate the feasibility
+            of onboard deployment.
           </p>
         </div>
-        <!-- TODO: 替换成你的结果图 -->
-        <div class="has-text-centered">
-          <img src="./static/images/results.png"
-               alt="MeCaRL Simulation Results"
-               style="max-width: 100%;">
-        </div>
 
-        <br>
-        <h3 class="title is-4">Real-world Experiments</h3>
-        <div class="content has-text-justified">
-          <p>
-            Real-world outdoor flight experiments demonstrate the feasibility of deploying
-            MeCaRL for safe and efficient UAV navigation in cluttered environments.
-          </p>
+        <div id="realworld-videos" class="video-container">
+          <div class="video-item">
+            <video autoplay muted loop playsinline>
+              <source src="./static/videos/realworld_third.mp4" type="video/mp4">
+            </video>
+            <h2 class="subtitle has-text-centered figure-caption">
+              Third-person view
+            </h2>
+          </div>
+          <div class="video-item">
+            <video autoplay muted loop playsinline>
+              <source src="./static/videos/realworld_fpv.mp4" type="video/mp4">
+            </video>
+            <h2 class="subtitle has-text-centered figure-caption">
+              Onboard first-person view
+            </h2>
+          </div>
         </div>
-        <!-- TODO: 替换成你的实验视频 -->
-        <!--
-        <div class="content has-text-centered">
-          <video controls muted preload playsinline width="75%">
-            <source src="./static/videos/realworld.mp4" type="video/mp4">
-          </video>
-        </div>
-        -->
-
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- BibTeX 引用 -->
-<!-- TODO: 论文正式发表后，补充完整的 BibTeX 信息（期刊/会议名、年份等） -->
+<!-- BibTeX -->
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{hong2025mecarl,
-  author  = {Hong, Hong and Liao, Feiyu and Wang, Haitao and Wu, Hejun},
   title   = {MeCaRL: Memory-enhanced Collision-aware Reinforcement Learning for UAV Navigation in Multi-scale Obstacle Environments},
+  author  = {Hong, Hong and Liao, Feiyu and Wang, Haitao and Wu, Hejun},
   year    = {2025},
 }</code></pre>
   </div>
@@ -312,11 +280,9 @@
       <div class="column is-8">
         <div class="content has-text-centered">
           <p>
-            This website is built upon the
-            <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> template,
-            licensed under a
-            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-              Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            This website borrows from the
+            <a href="https://github.com/nerfies/nerfies.github.io"><span class="dnerf">Nerfies</span></a>
+            template.
           </p>
         </div>
       </div>
