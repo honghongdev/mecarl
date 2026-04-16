@@ -1,14 +1,17 @@
-# Nerfies
+# MeCaRL
 
-This is the repository that contains source code for the [Nerfies website](https://nerfies.github.io).
+This repository contains the source code for the project website of **MeCaRL: Memory-enhanced Collision-aware Reinforcement Learning for UAV Navigation in Multi-scale Obstacle Environments**.
 
-If you find Nerfies useful for your work please cite:
+This website is adapted from the [Nerfies](https://github.com/nerfies/nerfies.github.io) template.
+
+The code is available at [hongh26/mecarl-release](https://github.com/hongh26/mecarl-release).
+
+If you find MeCaRL useful for your work, please cite:
 ```
-@article{park2021nerfies
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+@article{hong2025mecarl,
+  title   = {MeCaRL: Memory-enhanced Collision-aware Reinforcement Learning for UAV Navigation in Multi-scale Obstacle Environments},
+  author  = {Hong, Hong and Liao, Feiyu and Wang, Haitao and Wu, Hejun},
+  year    = {2025},
 }
 ```
 

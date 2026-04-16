@@ -11,7 +11,16 @@
       "Bash(cp \"figures/fig_trajectory_01.png\" \"static/images/fig_trajectory.png\")",
       "Bash(python3 -c \"from PIL import Image; img = Image.open\\('c:/百度网盘同步文件夹/BaiduSyncdisk/1-论文研究/1-MeCaRL/github展示网站/mecarl/static/images/uavnav-v3.png'\\); print\\(img.size, img.mode\\)\")",
       "Bash(powershell -command 'Add-Type -AssemblyName System.Drawing; $img = [System.Drawing.Image]::FromFile\\('\\\\''c:\\\\百度网盘同步文件夹\\\\BaiduSyncdisk\\\\1-论文研究\\\\1-MeCaRL\\\\github展示网站\\\\mecarl\\\\static\\\\images\\\\uavnav-v3.png'\\\\''\\); Write-Host $img.Width $img.Height; $img.Dispose\\(\\)')",
-      "Bash(powershell -command ':*)"
+      "Bash(powershell -command ':*)",
+      "Bash(gh repo *)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(ls -lh /home/hongh/mecarl/static/videos/realworld_*.mp4)",
+      "Bash(ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,pix_fmt,width,height -of default=noprint_wrappers=1 /home/hongh/mecarl/static/videos/realworld_third.mp4)",
+      "Bash(ffprobe -v error -select_streams v:0 -show_entries stream=codec_name,pix_fmt,width,height -of default=noprint_wrappers=1 /home/hongh/mecarl/static/videos/realworld_fpv.mp4)",
+      "Bash(python3 -c ' *)",
+      "Bash(ffmpeg -version)",
+      "Bash(sudo apt-get *)"
     ]
   }
 }
