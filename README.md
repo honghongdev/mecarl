@@ -2,9 +2,11 @@
 
 This repository contains the source code for the project website of **MeCaRL: Memory-enhanced Collision-aware Reinforcement Learning for UAV Navigation in Multi-scale Obstacle Environments**.
 
+🌐 **Project Page**: [https://honghongdev.github.io/mecarl/](https://honghongdev.github.io/mecarl/)
+
 This website is adapted from the [Nerfies](https://github.com/nerfies/nerfies.github.io) template.
 
-The code is available at [hongh26/mecarl-release](https://github.com/hongh26/mecarl-release).
+The code is available at [honghongdev/mecarl-release](https://github.com/honghongdev/mecarl-release).
 
 If you find MeCaRL useful for your work, please cite:
 ```
